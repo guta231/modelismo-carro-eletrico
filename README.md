@@ -12,7 +12,7 @@ Gustavo Henrique | 556712
 Milena Garcia | 555111
 Steffany Medeiros | 556262
 
-###Descrição do Projeto
+### Descrição do Projeto
 Nossa solução, resumidamente, é um Ecossistema Digital que permite aos usuários maior interação com as corridas, tornando-as mais divertidas e dinâmicas. Um dos fatores principais é relatar em nossa plataforma dados dos carros da corrida em tempo real, como velocidade, temperatura do motor e carga da bateria, além de outras inúmeras possibilidades que desejarmos. Para confirmar se o sistema criado está funcionando corretamente, precisamos testá-lo. Por isso, precisamos criar um modelo de carro para realizar os testes, ou seja, um carrinho de controle remoto.
 
 ### Requisitos e Funcionalidade
