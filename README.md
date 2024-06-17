@@ -37,4 +37,6 @@ O objetivo do projeto é criar um modelo para a execução de testes práticos n
 ### Observações
 Atualmente no projeto está sendo realizado testes com a captação de dados de velocidade do motor via sensores de pulsos.
 
-![Esquematização da simulação da ponte H no tinkercad](https://github.com/guta231/modelismo-carro-eletrico/blob/main/imagem%20esquematizada%20tinkercad.png))
+![Esquematização da simulação da ponte H no tinkercad](https://github.com/guta231/modelismo-carro-eletrico/blob/main/imagem%20esquematizada%20tinkercad.png)
+
+Clique [aqui](https://www.tinkercad.com/things/435US7UQ3Br-simulcao-de-funcionamento-de-controle-de-motores-com-ponte-h/editel) para ver a simulação do funcionamento de uma ponte H no tinkercad.
