@@ -17,19 +17,19 @@ Nossa solução, resumidamente, é um Ecossistema Digital que permite aos usuár
 
 ### Requisitos e Funcionalidade
 Os materiais necessários para fazer o modelo são:
-*2 Microprocessadores (um para o carro modelo e outro para o controle);
-*1 Chassi;
-*2 rodas traseiras e uma roda universal ou 4 rodas, porém com motor servo para direção das rodas frontais;
-*2 motores DC (corrente contínua);
-*1 Módulo Ponte H dupla para motores DC;
-*4 pilhas AA (necessário case de pilhas para seu funcionamento);
-*2 Power bank / baterias de 9v (um para o modelo e outro para o controle);
-*2 Módulos de radio frequência (um emissor e outro receptor);
-*2 Cabos USB;
-*1 joystick;
-*Conexão a internet para o envio de dados (ESP32 como ótima opção);
-*Cabos conforme necessário;
-*Sensores para teste conforme necessário;
+* 2 Microprocessadores (um para o carro modelo e outro para o controle);
+* 1 Chassi;
+* 2 rodas traseiras e uma roda universal ou 4 rodas, porém com motor servo para direção das rodas frontais;
+* 2 motores DC (corrente contínua);
+* 1 Módulo Ponte H dupla para motores DC;
+* 4 pilhas AA (necessário case de pilhas para seu funcionamento);
+* 2 Power bank / baterias de 9v (um para o modelo e outro para o controle);
+* 2 Módulos de radio frequência (um emissor e outro receptor);
+* 2 Cabos USB;
+* 1 joystick;
+* Conexão a internet para o envio de dados (ESP32 como ótima opção);
+* Cabos conforme necessário;
+* Sensores para teste conforme necessário;
 
 ### Objetivos
 O objetivo do projeto é criar um modelo para a execução de testes práticos no envio de informações dos carros, como velocidade, temperatura do motor e carga da bateria, para nossa plataforma digital, a fim de promover uma maior dinâmica e interação com o usuário durante a corrida.
