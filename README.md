@@ -17,25 +17,21 @@ Nossa solução, resumidamente, é um Ecossistema Digital que permite aos usuár
 
 ### Requisitos e Funcionalidade
 Os materiais necessários para fazer o modelo são:
-* 2 Microprocessadores (um para o carro modelo e outro para o controle);
+* 1 Microprocessador (ESP32 ou qualquer outro com funcionalidade bluetooth);
 * 1 Chassi;
 * 2 rodas traseiras e uma roda universal ou 4 rodas, porém com motor servo para direção das rodas frontais;
 * 2 motores DC (corrente contínua);
 * 1 Módulo Ponte H dupla para motores DC;
 * 4 pilhas AA (necessário case de pilhas para seu funcionamento);
-* 2 Power bank / baterias de 9v (um para o modelo e outro para o controle);
-* 2 Módulos de radio frequência (um emissor e outro receptor);
-* 2 Cabos USB;
-* 1 joystick;
-* Conexão a internet para o envio de dados (ESP32 como ótima opção);
+* 1 Power bank / baterias de 9v;
+* 1 Cabos USB;
+* Conexão ao WiFi para o envio de dados;
 * Cabos conforme necessário;
 * Sensores para teste conforme necessário;
 
 ### Objetivos
-O objetivo do projeto é criar um modelo para a execução de testes práticos no envio de informações dos carros, como velocidade, temperatura do motor e carga da bateria, para nossa plataforma digital, a fim de promover uma maior dinâmica e interação com o usuário durante a corrida.
+O objetivo do projeto é criar um modelo para a execução de testes práticos no envio de informações dos carros, como velocidade, temperatura do motor e carga da bateria para nossa plataforma digital com a finalidade de promover dinâmica e interação com o usuário durante a corrida.
 
-### Observações
-Atualmente no projeto está sendo realizado testes com a captação de dados de velocidade do motor via sensores de pulsos.
 
 ![Esquematização da simulação da ponte H no tinkercad](https://github.com/guta231/modelismo-carro-eletrico/blob/main/Simulção%20de%20funcionamento%20de%20controle%20de%20motores%20com%20ponte%20H.png)
 
