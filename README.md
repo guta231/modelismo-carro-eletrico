@@ -140,7 +140,7 @@ Os materiais necessários para fazer o modelo são:
 9. **De permissão ao acesso das portas**
 
 * 1883: Broker MQTT
-* 3036: MySQL
+* 3306: MySQL
 * 1880: node-red
 
 * Para dar acesso as portas pode ser feito direto do serviço que está utilizando (na Azure, por exemplo) ou se for maquina virtual própria usar o comando:
