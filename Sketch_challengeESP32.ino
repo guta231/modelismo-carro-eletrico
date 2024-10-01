@@ -3,8 +3,8 @@
 #include <PubSubClient.h>
 
 
-const char* ssid = "FIAP-IBM";
-const char* password = "Challenge@24!";
+const char* ssid = "";
+const char* password = "";
 const char* IP_MQTT = "4.228.225.124";
 
 const int pulsePin = 4;  // Pino conectado ao sensor de pulso
