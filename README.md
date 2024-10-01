@@ -110,6 +110,44 @@ Os materiais necessários para fazer o modelo são:
     sudo docker stats
     ```
 
+7. **Instale o node-red para tratar os dados**
+
+   ```bash
+   sudo npm install -g --unsafe-perm node-red
+   ```
+
+   *Inicializar node-red
+
+   ```bash
+   node-red
+   ```
+
+8. **Crie o container MySQL**
+
+   ```bash
+   sudo docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=sua_senha_root -e MYSQL_DATABASE=seu_banco_de_dados -e MYSQL_USER=seu_usuario -e MYSQL_PASSWORD=sua_senha -p 3306:3306 -d mysql:latest
+   ````
+
+   Legenda:
+*--name mysql-container: Nome do container.
+*-e MYSQL_ROOT_PASSWORD=sua_senha_root: Define a senha do usuário root do MySQL.
+*-e MYSQL_DATABASE=seu_banco_de_dados: Cria um banco de dados inicial.
+*-e MYSQL_USER=seu_usuario: Define um usuário adicional.
+*-e MYSQL_PASSWORD=sua_senha: Define a senha para o usuário adicional.
+*-p 3306:3306: Mapeia a porta 3306 do container para a porta 3306 do host.
+*-d mysql:latest: Usa a imagem mais recente do MySQL e executa o container em segundo plano.
+
+9. **De permissão ao acesso das portas**
+
+*1883: Broker MQTT
+*3036: MySQL
+*1880: node-red
+
+*Para dar acesso as portas pode ser feito direto do serviço que está utilizando (na Azure, por exemplo) ou se for maquina virtual própria usar o comando:
+
+```bash
+sudo ufw allow <porta>/tcp
+```
 
 
 ![Esquematização da simulação da ponte H no tinkercad](https://github.com/guta231/modelismo-carro-eletrico/blob/main/Simulção%20de%20funcionamento%20de%20controle%20de%20motores%20com%20ponte%20H.png)
