@@ -38,7 +38,7 @@ Os materiais necessários para fazer o modelo são:
 
 ### Passos para configuração do servidor
 
-1. *Criar Maquina virtual Linux Ubuntu usando Azure ou qualquer outro serviço;
+1. *Criar Maquina virtual Linux Ubuntu usando Azure ou qualquer outro serviço e abra um terminal
 
 2. **Conecte ao servidor via SSH após liga-lo**
 
@@ -88,7 +88,7 @@ Os materiais necessários para fazer o modelo são:
     sudo systemctl status docker
     ```
 
-5 . **Clone o repositório do fiware descomplicado**
+5. **Clone o repositório do fiware descomplicado**
 
     ```bash
     git clone https://github.com/fabiocabrini/fiware
@@ -104,7 +104,7 @@ Os materiais necessários para fazer o modelo são:
     sudo docker compose up -d
     ```
 
-    *Verifique se está funcionando corretamente;
+    *Verifique se está funcionando corretamente
 
     ```bash
     sudo docker stats
