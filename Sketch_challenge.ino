@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial Bluetooth(10, 11); // RX, TX
+SoftwareSerial Bluetooth(2, 8); // RX, TX
 
 const int in1 = 9; // IN1 do motor 1
 const int in2 = 6; // IN2 do motor 1
