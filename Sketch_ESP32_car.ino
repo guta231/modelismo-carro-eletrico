@@ -21,7 +21,7 @@ const unsigned long interval = 1000;  // Intervalo de 1 segundo para cálculo da
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-int velocidade_max;
+float velocidade_max;
 
 void connectWifi(){
 
@@ -100,10 +100,10 @@ void loop() {
 
   String mensagem = String(velocidade);
 
-  String velocidade_max = String(velocidade_max);
+  String mensagem_velocidade_max = String(velocidade_max);
 
   client.publish("/TEF/device001/attrs/velocidade", mensagem.c_str());
-  client.publish("/TEF/device001/attrs/velocidade_max",velocidade_max.c_str());
+  client.publish("/TEF/device001/attrs/velocidade_max",mensagem_velocidade_max.c_str());
     // Reseta o contador de pulsos
     pulseCount = 0;
   }
