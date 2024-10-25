@@ -1,7 +1,5 @@
-
 #include <WiFi.h>
 #include <PubSubClient.h>
-
 
 const char* ssid = "";
 const char* password = "";
@@ -24,16 +22,12 @@ PubSubClient client(espClient);
 float velocidade_max;
 
 void connectWifi(){
-
   if (WiFi.status() != WL_CONNECTED){
     WiFi.begin(ssid, password);
-
     if (WiFi.status() == WL_CONNECTED){
       Serial.println("Conectado a Rede WIFI");
     }
   }
-
-
 }
 
 // Função de interrupção para contar os pulsos
@@ -42,33 +36,40 @@ void IRAM_ATTR pulseISR() {
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600); // Inicia a comunicação serial para UART e monitor serial
+  Serial.println("Iniciando a leitura da velocidade...");
 
   // Configura o pino do sensor de pulso como entrada
   pinMode(pulsePin, INPUT_PULLUP);
 
-
   // Ativa a interrupção no pino do sensor de pulso (na borda de descida)
   attachInterrupt(digitalPinToInterrupt(pulsePin), pulseISR, FALLING);
 
-  Serial.println("Iniciando a leitura da velocidade...");
-
   connectWifi();
-  
   client.setServer(IP_MQTT, 1883);
 }
-
 
 void loop() {
   if (!client.connected()){
     Serial.print(".");
-    client.connect("device001");
+    client.connect("device001"); 
     delay(1000);
     if (client.connected()){
       Serial.println("Dispositivo conectado ao broker");
     }
   }
+
   unsigned long currentTime = millis();
+
+  // Lê dados recebidos do Arduino via UART no RX0
+  if (Serial.available()) {
+    String uartMessage = Serial.readStringUntil('\n'); // Lê a mensagem até o caractere de nova linha
+    Serial.print("Mensagem recebida via UART: ");
+    Serial.println(uartMessage);
+    
+    // Opcionalmente, publicar a mensagem no MQTT
+    client.publish("/TEF/device001/attrs/uart", uartMessage.c_str());
+  }
 
   // Calcula a velocidade a cada 1 segundo
   if (currentTime - previousTime >= interval) {
@@ -91,19 +92,18 @@ void loop() {
     Serial.print(velocidade);
     Serial.println(" km/h");
 
-  if (velocidade > velocidade_max){
-    velocidade_max = velocidade;
-  }
+    if (velocidade > velocidade_max){
+      velocidade_max = velocidade;
+    }
   
+    Serial.println("Velocidade 1: " + String(velocidade));
 
-  Serial.println("Velocidade 1: " + String(velocidade));
+    String mensagem = String(velocidade);
+    String mensagem_velocidade_max = String(velocidade_max);
 
-  String mensagem = String(velocidade);
-
-  String mensagem_velocidade_max = String(velocidade_max);
-
-  client.publish("/TEF/device001/attrs/velocidade", mensagem.c_str());
-  client.publish("/TEF/device001/attrs/velocidade_max",mensagem_velocidade_max.c_str());
+    client.publish("/TEF/device001/attrs/velocidade", mensagem.c_str()); 
+    client.publish("/TEF/device001/attrs/velocidade_max", mensagem_velocidade_max.c_str()); 
+    
     // Reseta o contador de pulsos
     pulseCount = 0;
   }
